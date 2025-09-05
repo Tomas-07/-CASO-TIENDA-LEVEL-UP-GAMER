@@ -1,0 +1,115 @@
+/* ===== DETALLE DE PRODUCTO ===== */
+.detalle-producto {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 50px;
+  padding: 60px 10%;
+  color: #fff;
+  background: linear-gradient(180deg, #000000 0%, #0a0a0a 100%);
+}
+
+.detalle-producto .imagen {
+  flex: 1 1 350px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.detalle-producto .imagen img {
+  width: 100%;
+  max-width: 400px;
+  border-radius: 16px;
+  box-shadow: 0 8px 25px rgba(30, 144, 255, 0.7);
+  transition: transform 0.4s ease;
+}
+
+.detalle-producto .imagen img:hover {
+  transform: scale(1.05);
+}
+
+.detalle-producto .info {
+  flex: 1 1 450px;
+  background: #111111;
+  padding: 30px;
+  border-radius: 16px;
+  box-shadow: 0 6px 20px rgba(57, 255, 20, 0.3);
+}
+
+.detalle-producto h2 {
+  font-size: 2.2rem;
+  color: #39FF14; /* Verde neón */
+  margin-bottom: 15px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.detalle-producto .precio {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #1E90FF; /* Azul eléctrico */
+  margin: 15px 0 25px;
+  text-shadow: 0 0 8px rgba(30, 144, 255, 0.8);
+}
+
+.detalle-producto p {
+  color: #D3D3D3;
+  margin-bottom: 20px;
+  line-height: 1.6;
+}
+
+.detalle-producto ul {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 25px;
+}
+
+.detalle-producto ul li {
+  background: #1a1a1a;
+  margin: 8px 0;
+  padding: 12px 15px;
+  border-radius: 10px;
+  color: #FFFFFF;
+  border-left: 4px solid #1E90FF;
+  transition: background 0.3s;
+}
+
+.detalle-producto ul li:hover {
+  background: #222222;
+  border-left: 4px solid #39FF14;
+}
+
+.detalle-producto .btn-agregar {
+  background: linear-gradient(90deg, #1E90FF, #39FF14);
+  border: none;
+  padding: 14px 22px;
+  color: #000;
+  font-weight: bold;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.detalle-producto .btn-agregar:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 15px #39FF14, 0 0 25px #1E90FF;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  margin: 0;
+  padding: 0;
+}
+nav a {
+  text-decoration: none;
+  color: #000000;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+nav a:hover {
+  color: #1E90FF;
+}
