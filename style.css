@@ -1,0 +1,116 @@
+/* Fuentes y colores base */
+body {
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+  background-color: #000000;
+  color: #FFFFFF;
+}
+
+h1, h2 {
+  font-family: 'Orbitron', sans-serif;
+  color: #1E90FF; /* Azul eléctrico */
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #111111;
+  padding: 15px 30px;
+}
+
+header h1 {
+  color: #39FF14; /* Verde neón */
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  margin: 0;
+  padding: 0;
+}
+
+nav a {
+  text-decoration: none;
+  color: #FFFFFF;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+nav a:hover {
+  color: #1E90FF;
+}
+
+section {
+  padding: 40px;
+  text-align: center;
+}
+
+footer {
+  background-color: #111111;
+  padding: 20px;
+  text-align: center;
+  color: #D3D3D3;
+  font-size: 14px;
+}
+/* Catálogo de productos */
+.productos {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 25px;
+  margin-top: 30px;
+}
+
+.producto {
+  background-color: #111111;
+  padding: 20px;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.6);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.producto:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 15px rgba(30,144,255,0.6);
+}
+
+.producto img {
+  width: 100%;
+  border-radius: 8px;
+  margin-bottom: 15px;
+}
+
+.producto h3 {
+  color: #39FF14; /* Verde neón */
+  margin-bottom: 10px;
+}
+
+.precio {
+  font-weight: bold;
+  color: #1E90FF; /* Azul eléctrico */
+  margin-bottom: 10px;
+}
+
+.descripcion {
+  font-size: 14px;
+  color: #D3D3D3;
+  margin-bottom: 15px;
+}
+
+.btn-agregar {
+  background-color: #1E90FF;
+  border: none;
+  padding: 10px 15px;
+  color: #fff;
+  font-weight: bold;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.btn-agregar:hover {
+  background-color: #39FF14;
+  color: #000;
+}
