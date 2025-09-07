@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Carrito | Level-Up Gamer</title>
+
+  <!-- Tipografías -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Orbitron:wght@500;700&display=swap" rel="stylesheet">
+
+  <!-- CSS único -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Encabezado -->
+  <header>
+    <div class="logo">
+      <h1>🎮 Level-Up Gamer</h1>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="index.html#catalogo">Catálogo</a></li>
+        <li><a href="index.html#comunidad">Comunidad</a></li>
+        <li><a href="index.html#contacto">Contacto</a></li>
+        <li><a href="Login.html">Log In</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Contenido principal -->
+  <main class="wrap">
+    <h2>🛒 Tu Carrito de Compras</h2>
+
+    <table class="cart">
+      <thead>
+        <tr>
+          <th>Producto</th>
+          <th>Precio</th>
+          <th>Cantidad</th>
+          <th>Total línea</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Auriculares HyperX Cloud II</td>
+          <td>$79.990</td>
+          <td><input type="number" value="1" min="1"></td>
+          <td>$79.990</td>
+        </tr>
+        <tr>
+          <td>Consola PlayStation 5</td>
+          <td>$549.990</td>
+          <td><input type="number" value="1" min="1"></td>
+          <td>$549.990</td>
+        </tr>
+      </tbody>
+      <tfoot>
+        <tr>
+          <td colspan="3" style="text-align:right"><strong>Total</strong></td>
+          <td><strong>$629.980</strong></td>
+        </tr>
+      </tfoot>
+    </table>
+
+    <div class="acciones-carrito">
+    <a href="index.html#catalogo" class="btn-seguir">⬅ Seguir comprando</a>
+    <button class="btn-pagar">Proceder al pago</button>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="footer-content">
+      <p>© 2025 Level-Up Gamer — Despachos a todo Chile</p>
+      <nav class="footer-nav">
+        <a href="index.html">Inicio</a> ·
+        <a href="catalogo.html">Catálogo</a> ·
+        <a href="eventos.html">Eventos</a> ·
+        <a href="soporte.html">Soporte</a>
+      </nav>
+    </div>
+  </footer>
+</body>
+</html>

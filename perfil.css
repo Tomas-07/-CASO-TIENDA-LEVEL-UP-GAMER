@@ -1,0 +1,116 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  background-color: #111111; /* Igual al recuadro de Mi Perfil */
+  color: #FFFFFF;
+  font-family: 'Roboto', sans-serif;
+  min-height: 100vh;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background: #111;
+}
+
+.logo h1 {
+  color: #1E90FF; /* Azul eléctrico */
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #fff;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+nav ul li a:hover {
+  color: #39FF14; /* Verde neón */
+}
+
+/* Carrito en el menú más llamativo */
+nav ul li:last-child a {
+  background: #1E90FF;
+  padding: 0.4rem 0.8rem;
+  border-radius: 6px;
+}
+
+nav ul li:last-child a:hover {
+  background: #39FF14;
+  color: #000;
+}
+
+/* ===== PERFIL DE USUARIO ===== */
+.perfil {
+  max-width: 600px;
+  margin: 50px auto;
+  padding: 30px;
+  background: #111111;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(30,144,255,0.4);
+}
+
+.perfil h2 {
+  text-align: center;
+  color: #39FF14;
+  margin-bottom: 20px;
+}
+
+.perfil form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.perfil label {
+  color: #FFFFFF;
+  font-weight: bold;
+}
+
+.perfil input,
+.perfil select {
+  padding: 10px;
+  border-radius: 8px;
+  border: none;
+  outline: none;
+  background: #1a1a1a;
+  color: #FFFFFF;
+  font-size: 1rem;
+}
+
+.perfil input:focus,
+.perfil select:focus {
+  border: 1px solid #1E90FF;
+  box-shadow: 0 0 8px #1E90FF;
+}
+
+.perfil button {
+  background: linear-gradient(90deg, #1E90FF, #39FF14);
+  border: none;
+  padding: 12px;
+  color: #000;
+  font-weight: bold;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.3s;
+}
+
+.perfil button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 12px #39FF14, 0 0 18px #1E90FF;
+}
+
+.mensaje {
+  margin-top: 20px;
+  text-align: center;
+  font-weight: bold;
+  color: #1E90FF;
+}

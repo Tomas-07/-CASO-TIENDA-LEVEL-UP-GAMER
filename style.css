@@ -1,0 +1,379 @@
+/* ================================
+   RESET BÁSICO Y FUENTES
+   ================================ */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: #000;   /* Fondo negro gamer */
+  color: #fff;              /* Texto base blanco */
+  line-height: 1.6;
+}
+
+h1, h2, h3 {
+  font-family: 'Orbitron', sans-serif; /* Titulares gamer */
+}
+
+/* ================================
+   HEADER Y NAVEGACIÓN
+   ================================ */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background: #111;
+}
+
+.logo h1 {
+  color: #1E90FF; /* Azul eléctrico */
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #fff;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+nav ul li a:hover {
+  color: #39FF14; /* Verde neón */
+}
+
+/* Carrito en el menú más llamativo */
+nav ul li:last-child a {
+  background: #1E90FF;
+  padding: 0.4rem 0.8rem;
+  border-radius: 6px;
+}
+
+nav ul li:last-child a:hover {
+  background: #39FF14;
+  color: #000;
+}
+
+/* ================================
+   SECCIONES GENERALES
+   ================================ */
+section {
+  padding: 2rem;
+  text-align: center;
+}
+
+section h2 {
+  margin-bottom: 1rem;
+  color: #39FF14;
+}
+
+/* ================================
+   CATÁLOGO Y PRODUCTOS
+   ================================ */
+.productos {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
+}
+
+.producto {
+  background: #111;
+  padding: 1rem;
+  border-radius: 8px;
+  text-align: center;
+  transition: transform 0.3s;
+}
+
+.producto:hover {
+  transform: scale(1.03);
+}
+
+.producto img {
+  max-width: 100%;
+  border-radius: 8px;
+}
+
+.precio {
+  font-weight: bold;
+  margin: 0.5rem 0;
+  color: #1E90FF;
+}
+
+.btn-agregar,
+.btn-detalle {
+  display: inline-block;
+  margin-top: 0.5rem;
+  padding: 0.6rem 1rem;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  text-decoration: none;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+/* Botón de agregar al carrito */
+.btn-agregar {
+  background: #1E90FF;
+  color: #fff;
+}
+
+.btn-agregar:hover {
+  background: #39FF14;
+  color: #000;
+}
+
+/* Botón de ver detalles */
+.btn-detalle {
+  background: transparent;
+  color: #39FF14;
+  border: 1px solid #39FF14;
+}
+
+.btn-detalle:hover {
+  background: #39FF14;
+  color: #000;
+}
+
+/* ================================
+   TABLA DEL CARRITO
+   ================================ */
+.cart {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.5rem 0;
+}
+
+.cart th, .cart td {
+  padding: 0.8rem;
+  border-bottom: 1px solid #333;
+  text-align: left;
+}
+
+.cart input[type="number"] {
+  width: 60px;
+  text-align: center;
+  padding: 0.3rem;
+  border-radius: 4px;
+  border: none;
+}
+
+.cart-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+/* Botones generales */
+.btn {
+  padding: 0.6rem 1.2rem;
+  background: #1E90FF;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  text-decoration: none;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  background: #39FF14;
+  color: #000;
+}
+
+/* ================================
+   FORMULARIOS LOGIN/REGISTRO
+   ================================ */
+.auth-box {
+  max-width: 480px;
+  margin: 2rem auto;
+  background: #111;
+  padding: 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0 0 0 1px #222;
+  text-align: left;
+}
+
+.auth-box h2 {
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.form {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.form label {
+  font-weight: bold;
+}
+
+.form input[type="text"],
+.form input[type="email"],
+.form input[type="password"] {
+  background: #0b0b0b;
+  color: #fff;
+  border: 1px solid #222;
+  border-radius: 8px;
+  padding: 0.6rem 0.8rem;
+  outline: none;
+}
+
+.form input:focus {
+  border-color: #1E90FF;
+  box-shadow: 0 0 0 2px rgba(30,144,255,.2);
+}
+
+.checkline {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  margin: 0.25rem 0 0.5rem;
+}
+
+.muted {
+  color: #aaa;
+  font-size: 0.9rem;
+  text-align: center;
+}
+
+/* ================================
+   FOOTER
+   ================================ */
+.site-footer {
+  background: #111;
+  color: #d3d3d3;
+  text-align: center;
+  padding: 1.5rem;
+  margin-top: 2rem;
+  font-size: 0.9rem;
+}
+
+.site-footer a {
+  color: #1E90FF;
+  text-decoration: none;
+  margin: 0 5px;
+}
+
+.site-footer a:hover {
+  color: #39FF14;
+}
+
+/* ================================
+   EXTRA: Scroll suave entre secciones
+   ================================ */
+html {
+  scroll-behavior: smooth;
+}
+
+/* ================================
+   CARRITO (lista + acciones)
+   ================================ */
+.carrito {
+  max-width: 1000px;
+  margin: 40px auto;
+  padding: 0 20px;
+}
+
+.carrito h2 {
+  font-size: 2rem;
+  color: #39FF14; /* combina con tus títulos */
+  margin-bottom: 25px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-align: center;
+}
+
+/* Lista de productos del carrito */
+.carrito-items {
+  background: #111;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 6px 20px rgba(57, 255, 20, 0.25);
+  margin-bottom: 30px;
+}
+
+.carrito-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #1a1a1a;
+  padding: 12px 15px;
+  border-radius: 10px;
+  margin-bottom: 12px;
+  border-left: 4px solid #1E90FF;
+  transition: background 0.3s, border-color 0.3s;
+}
+.carrito-item:hover {
+  background: #222;
+  border-left-color: #39FF14;
+}
+
+.carrito-item span { font-weight: 500; }
+
+.carrito-total {
+  text-align: right;
+  font-size: 1.3rem;
+  font-weight: bold;
+  margin-top: 20px;
+  color: #1E90FF;
+  text-shadow: 0 0 8px rgba(30,144,255,0.8);
+}
+
+/* Acciones del carrito */
+.acciones-carrito {
+  margin-top: 30px;
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+/* Botón reutilizando tu sistema (.btn base) */
+.btn-seguir,
+.btn-pagar {
+  /* heredan de .btn si también lo agregas en HTML */
+  border-radius: 8px;
+}
+
+/* Seguir comprando: estilo secundario */
+.btn-seguir {
+  background: transparent;
+  color: #39FF14;
+  border: 1px solid #39FF14;
+}
+.btn-seguir:hover {
+  background: #39FF14;
+  color: #000;
+}
+
+/* Proceder al pago: usa tu paleta principal */
+.btn-pagar {
+  background: #1E90FF;
+  color: #fff;
+  border: none;
+}
+.btn-pagar:hover {
+  background: #39FF14;
+  color: #000;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .carrito-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+  .carrito-total { text-align: center; }
+}

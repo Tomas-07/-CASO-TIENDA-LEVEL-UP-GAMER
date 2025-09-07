@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Crear cuenta | Level-Up Gamer</title>
+
+  <!-- Tipografías -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Orbitron:wght@500;700&display=swap" rel="stylesheet">
+
+  <!-- CSS global -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Header (mismo nav que index) -->
+  <header>
+    <div class="logo">
+      <h1>🎮 Level-Up Gamer</h1>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="index.html#inicio">Inicio</a></li>
+        <li><a href="index.html#catalogo">Catálogo</a></li>
+        <li><a href="index.html#comunidad">Comunidad</a></li>
+        <li><a href="index.html#contacto">Contacto</a></li>
+        <li><a href="carrito.html">🛒 Carrito</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="wrap">
+    <section class="auth-box">
+      <h2>Crear nueva cuenta</h2>
+
+      <form class="form" id="registroForm" novalidate>
+        <label for="reg-nombre">Nombre completo</label>
+        <input id="reg-nombre" type="text" placeholder="Tu nombre y apellido" required />
+
+        <label for="reg-email">Correo electrónico</label>
+        <input id="reg-email" type="email" placeholder="tucorreo@ejemplo.com" required />
+
+        <label for="reg-pass">Contraseña</label>
+        <input id="reg-pass" type="password" placeholder="Mínimo 6 caracteres" required />
+
+        <div class="checkline">
+          <input id="reg-18" type="checkbox" />
+          <label for="reg-18">Declaro ser mayor de 18 años</label>
+        </div>
+
+        <label for="reg-ref">Código de referido (opcional)</label>
+        <input id="reg-ref" type="text" placeholder="Ej: AB12CD" />
+
+        <button class="btn" type="submit">Crear cuenta</button>
+      </form>
+
+      <p class="muted" style="margin-top:1rem">
+        ¿Ya tienes una cuenta?
+        <!-- ENLACE que pediste: vuelve al Login -->
+        <a href="Login.html"><strong>Log in</strong></a>
+      </p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-content">
+      <p>© 2025 Level-Up Gamer — Despachos a todo Chile</p>
+      <nav class="footer-nav">
+        <a href="index.html#inicio">Inicio</a> ·
+        <a href="index.html#catalogo">Catálogo</a> ·
+        <a href="index.html#comunidad">Comunidad</a> ·
+        <a href="index.html#contacto">Contacto</a>
+      </nav>
+    </div>
+  </footer>
+</body>
+</html>

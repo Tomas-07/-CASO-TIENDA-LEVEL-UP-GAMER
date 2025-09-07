@@ -1,0 +1,173 @@
+/* ====== BASE (opcional si no lo tienes) ====== */
+:root{
+  --bg:#000; --fg:#fff; --card:#111; --muted:#999; --line:#222; --accent:#1E90FF; --star:#FFD54A;
+}
+*{ box-sizing:border-box; }
+body{ margin:0; background:var(--bg); color:var(--fg); font-family: 'Roboto', system-ui, -apple-system, Segoe UI, Arial, sans-serif; }
+header{ display:flex; align-items:center; justify-content:space-between; padding:1rem 1.5rem; background:#111; }
+header .logo h1{ margin:0; color:var(--accent); font-family:'Orbitron', sans-serif; }
+header nav ul{ list-style:none; display:flex; gap:1rem; margin:0; padding:0; }
+header nav a{ color:#fff; text-decoration:none; }
+header nav a:hover{ color:var(--accent); }
+
+/* ====== DETALLE DE PRODUCTO (layout) ====== */
+.detalle-producto{
+  display:grid;
+  grid-template-columns: 1.2fr 1fr; /* imagen | info */
+  gap: 1.5rem;
+  max-width: 1100px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+.imagen img{
+  width:100%; height:auto; border-radius:16px; display:block;
+  box-shadow:0 10px 28px rgba(0,0,0,.35);
+}
+.info{
+  background: var(--card);
+  border:1px solid var(--line);
+  border-radius:16px;
+  padding:1.25rem;
+}
+.info h2{ margin-top:0; font-family:'Orbitron', sans-serif; }
+.precio{ font-size:1.35rem; font-weight:700; margin:.25rem 0 1rem; color:#fff; }
+.info ul{ margin: .75rem 0 1rem 1.1rem; }
+.acciones{ display:flex; align-items:center; gap:.75rem; margin-top:1rem; }
+.btn-agregar{
+  background:var(--accent); color:#fff; border:0; border-radius:10px; padding:.6rem .9rem; font-weight:600; cursor:pointer;
+}
+.btn-agregar:hover{ filter:brightness(1.08); }
+.btn-volver{
+  color:#fff; border:1px solid var(--line); border-radius:10px; padding:.55rem .85rem; text-decoration:none;
+}
+.btn-volver:hover{ border-color:#444; }
+
+/* #reviews ocupa todo el ancho del grid */
+.detalle-producto #reviews{ grid-column: 2; }
+
+/* ====== RESEÑAS (mockup visual) ====== */
+.reviews-card{
+  background:var(--card);
+  color:var(--fg);
+  border-radius:16px;
+  padding:1.25rem;
+  margin:1.5rem 0 0;
+  box-shadow:0 10px 28px rgba(0,0,0,.35);
+  border:1px solid var(--line);
+}
+.reviews-card h2{
+  font-family:'Orbitron', sans-serif;
+  margin:0 0 .6rem;
+  letter-spacing:.5px;
+}
+
+/* Meta (promedio / cantidad) */
+.reviews-meta{
+  display:flex;
+  align-items:center;
+  gap:.5rem;
+  margin-bottom:1rem;
+  font-size:.98rem;
+  color:var(--muted);
+}
+.reviews-meta .avg{ color:#fff; font-weight:700; }
+.reviews-meta .of{ opacity:.85; }
+.reviews-meta .count{ margin-left:.25rem; }
+
+/* Estrellas DISPLAY: usa --value (0–5) */
+.stars{
+  --value:0;
+  position:relative;
+  display:inline-block;
+  font-size:1.1rem;
+  line-height:1;
+  letter-spacing:.12em;
+}
+.stars::before{ content:"★★★★★"; color:#333; }
+.stars::after{
+  content:"★★★★★";
+  position:absolute; inset:0;
+  width: calc((var(--value) / 5) * 100%);
+  overflow:hidden;
+  color:var(--star);
+}
+
+/* Formulario (demo visual) */
+.review-form{ display:grid; gap:.75rem; margin-bottom:1rem; }
+.review-form .label{ font-size:.95rem; color:#ddd; }
+
+/* Radio + labels para selección de estrellas (no funcional) */
+.star-input{
+  display:inline-flex;
+  flex-direction: row-reverse; /* hover pinta hacia la izquierda */
+  gap:.2rem;
+  font-size:1.6rem;
+  user-select:none;
+}
+.star-input input{ display:none; }
+.star-input label{
+  cursor:pointer;
+  color:#333;
+  transition: color .15s ease;
+}
+.star-input label:hover,
+.star-input label:hover ~ label{ color:var(--star); }
+/* Si quieres “marcar” visualmente una elección en el mockup, puedes dejar uno chequeado por defecto
+   y este estilo hará que se vea pintado: */
+.star-input input:checked ~ label{ color:var(--star); }
+
+.review-text{
+  background:#000;
+  color:#fff;
+  border:1px solid var(--line);
+  border-radius:10px;
+  padding:.75rem .9rem;
+  min-height:90px;
+  resize:vertical;
+}
+.btn-resena{
+  background:var(--accent);
+  color:#fff;
+  border:0;
+  border-radius:10px;
+  padding:.6rem .9rem;
+  font-weight:600;
+  cursor:pointer;
+}
+.btn-resena:hover{ filter:brightness(1.08); }
+.hint{ font-size:.85rem; color:var(--muted); }
+
+/* Lista de reseñas */
+.reviews-list{
+  list-style:none;
+  padding:0;
+  display:grid;
+  gap:.8rem;
+}
+.review-item{
+  background:#0c0c0c;
+  border:1px solid var(--line);
+  border-radius:12px;
+  padding:.85rem;
+}
+.review-head{
+  display:flex;
+  align-items:center;
+  gap:.5rem;
+  flex-wrap:wrap;
+  margin-bottom:.3rem;
+}
+.review-head .user{ color:#fff; }
+.review-head .date{ color:var(--muted); font-size:.9rem; }
+.review-body{ line-height:1.55; color:#eaeaea; }
+
+/* ====== Responsive ====== */
+@media (max-width: 960px){
+  .detalle-producto{
+    grid-template-columns: 1fr;
+  }
+}
+@media (max-width:520px){
+  .star-input{ font-size:1.4rem; }
+  .reviews-meta{ flex-wrap:wrap; gap:.35rem; }
+}

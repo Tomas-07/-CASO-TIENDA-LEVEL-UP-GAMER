@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mi Perfil - Level-Up Gamer</title>
+  <link rel="stylesheet" href="perfil.css">
+</head>
+<body>
+   <header>
+    <div class="logo">
+      <h1>🎮 Level-Up Gamer</h1>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="#inicio">Inicio</a></li>
+        <li><a href="#catalogo">Catálogo</a></li>
+        <li><a href="#comunidad">Comunidad</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+        <li><a href="carrito.html">🛒 Carrito</a></li>
+      </ul>
+    </nav>
+  </header>
+
+
+  <main class="perfil">
+    <h2>Mi Perfil</h2>
+    <form id="perfilForm">
+      <label for="nombre">Nombre</label>
+      <input type="text" id="nombre" name="nombre" placeholder="Ingresa tu nombre">
+
+      <label for="email">Correo electrónico</label>
+      <input type="email" id="email" name="email" placeholder="Ingresa tu correo">
+
+      <label for="preferencias">Preferencias de compra</label>
+      <select id="preferencias" name="preferencias">
+        <option value="consolas">Consolas</option>
+        <option value="pc">Computadores Gamers</option>
+        <option value="accesorios">Accesorios</option>
+        <option value="sillas">Sillas Gamers</option>
+        <option value="ropa">Poleras/Polerones</option>
+      </select>
+
+      <button type="submit">Guardar cambios</button>
+    </form>
+
+    <div id="mensaje" class="mensaje"></div>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Level-Up Gamer. Todos los derechos reservados.</p>
+  </footer>
+
+  <script src="perfil.js"></script>
+</body>
+</html>
