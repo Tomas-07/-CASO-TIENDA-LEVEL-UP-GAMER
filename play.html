@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>PlayStation 5 - Level-Up Gamer</title>
+  <link rel="stylesheet" href="Play.css"/>
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <h1>🎮 Level-Up Gamer</h1>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="index.html#catalogo">Catálogo</a></li>
+        <li><a href="index.html#comunidad">Comunidad</a></li>
+        <li><a href="index.html#contacto">Contacto</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="detalle-producto" id="play-ps5">
+    <div class="imagen">
+      <img src="https://gsmpro.cl/cdn/shop/articles/16991bf65a7a52901d78b55fa36bddc8.jpg?v=1737343320"
+           alt="Consola PlayStation 5">
+    </div>
+
+    <div class="info">
+      <h2>PlayStation 5</h2>
+      <p class="precio">$549.990 CLP</p>
+      <p>
+        La PlayStation 5 es la consola de última generación de Sony,
+        que ofrece gráficos impresionantes y tiempos de carga ultrarrápidos
+        gracias a su disco SSD. Disfruta de una experiencia de juego inmersiva,
+        soporte para Ray Tracing, retrocompatibilidad con PS4 y un mando DualSense
+        con vibración háptica avanzada.
+      </p>
+      <ul>
+        <li>CPU: AMD Ryzen Zen 2 (8 núcleos, 3.5GHz)</li>
+        <li>GPU: 10.28 TFLOPs, arquitectura RDNA 2</li>
+        <li>RAM: 16 GB GDDR6</li>
+        <li>Almacenamiento: SSD ultra rápido 825 GB</li>
+        <li>Resolución: 4K UHD / Hasta 120 FPS</li>
+      </ul>
+
+      <div class="acciones">
+        <button class="btn-agregar">Agregar al carrito</button>
+        <a href="index.html#catalogo" class="btn-volver">⬅ Volver al catálogo</a>
+      </div>
+    </div>
+
+    <!-- RESEÑAS (mockup estático, sin funcionalidad) -->
+    <section id="reviews" class="reviews-card" aria-label="Reseñas del producto">
+      <h2>Reseñas</h2>
+
+      <!-- Meta: promedio y cantidad (ejemplo) -->
+      <div class="reviews-meta">
+        <span class="stars" style="--value:4.5" aria-label="4.5 de 5"></span>
+        <strong class="avg">4.5</strong><span class="of">/5</span>
+        <span class="count">· 128 reseñas</span>
+      </div>
+
+      <!-- Formulario visual (demostración) -->
+      <form class="review-form" action="#" method="get" onsubmit="return false">
+        <label class="label">Tu calificación</label>
+
+        <!-- Estrellas solo con CSS (radio + labels) -->
+        <div class="star-input" aria-label="Selecciona tu calificación (demo)">
+          <input id="rate-5" type="radio" name="rating" value="5">
+          <label for="rate-5" title="5 estrellas">★</label>
+
+          <input id="rate-4" type="radio" name="rating" value="4">
+          <label for="rate-4" title="4 estrellas">★</label>
+
+          <input id="rate-3" type="radio" name="rating" value="3">
+          <label for="rate-3" title="3 estrellas">★</label>
+
+          <input id="rate-2" type="radio" name="rating" value="2">
+          <label for="rate-2" title="2 estrellas">★</label>
+
+          <input id="rate-1" type="radio" name="rating" value="1">
+          <label for="rate-1" title="1 estrella">★</label>
+        </div>
+
+        <textarea class="review-text" placeholder="Escribe tu reseña" maxlength="600"></textarea>
+        <button type="button" class="btn-resena">Publicar reseña</button>
+      </form>
+
+      <!-- Lista de reseñas de ejemplo -->
+      <ul class="reviews-list">
+        <li class="review-item">
+          <div class="review-head">
+            <span class="stars" style="--value:5" aria-label="5 de 5"></span>
+            <strong class="user">Camila R.</strong>
+            <time class="date" datetime="2025-08-28">28/08/2025</time>
+          </div>
+          <p class="review-body">Excelente calidad y entrega rápida. El control se siente sólido y la respuesta es precisa.</p>
+        </li>
+
+        <li class="review-item">
+          <div class="review-head">
+            <span class="stars" style="--value:4" aria-label="4 de 5"></span>
+            <strong class="user">Matías G.</strong>
+            <time class="date" datetime="2025-08-21">21/08/2025</time>
+          </div>
+          <p class="review-body">Todo bien, aunque el empaque llegó un poco abollado. El producto funciona perfecto.</p>
+        </li>
+
+        <li class="review-item">
+          <div class="review-head">
+            <span class="stars" style="--value:4.5" aria-label="4.5 de 5"></span>
+            <strong class="user">Valentina S.</strong>
+            <time class="date" datetime="2025-08-12">12/08/2025</time>
+          </div>
+          <p class="review-body">Muy buen precio y atención. Volvería a comprar aquí sin dudarlo.</p>
+        </li>
+      </ul>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Level-Up Gamer. Todos los derechos reservados.</p>
+  </footer>
+</body>
+</html>
