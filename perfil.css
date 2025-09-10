@@ -1,7 +1,7 @@
 html, body {
   margin: 0;
   padding: 0;
-  background-color: #111111; /* Igual al recuadro de Mi Perfil */
+  background-color: #111111; 
   color: #FFFFFF;
   font-family: 'Roboto', sans-serif;
   min-height: 100vh;
@@ -16,7 +16,7 @@ header {
 }
 
 .logo h1 {
-  color: #1E90FF; /* Azul eléctrico */
+  color: #1E90FF; 
 }
 
 nav ul {
@@ -33,10 +33,10 @@ nav ul li a {
 }
 
 nav ul li a:hover {
-  color: #39FF14; /* Verde neón */
+  color: #39FF14; 
 }
 
-/* Carrito en el menú más llamativo */
+
 nav ul li:last-child a {
   background: #1E90FF;
   padding: 0.4rem 0.8rem;
@@ -48,7 +48,7 @@ nav ul li:last-child a:hover {
   color: #000;
 }
 
-/* ===== PERFIL DE USUARIO ===== */
+
 .perfil {
   max-width: 600px;
   margin: 50px auto;

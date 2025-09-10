@@ -1,4 +1,4 @@
-/* ====== BASE (opcional si no lo tienes) ====== */
+
 :root{
   --bg:#000; --fg:#fff; --card:#111; --muted:#999; --line:#222; --accent:#1E90FF; --star:#FFD54A;
 }
@@ -10,10 +10,10 @@ header nav ul{ list-style:none; display:flex; gap:1rem; margin:0; padding:0; }
 header nav a{ color:#fff; text-decoration:none; }
 header nav a:hover{ color:var(--accent); }
 
-/* ====== DETALLE DE PRODUCTO (layout) ====== */
+
 .detalle-producto{
   display:grid;
-  grid-template-columns: 1.2fr 1fr; /* imagen | info */
+  grid-template-columns: 1.2fr 1fr; 
   gap: 1.5rem;
   max-width: 1100px;
   margin: 2rem auto;
@@ -42,10 +42,10 @@ header nav a:hover{ color:var(--accent); }
 }
 .btn-volver:hover{ border-color:#444; }
 
-/* #reviews ocupa todo el ancho del grid */
+
 .detalle-producto #reviews{ grid-column: 2; }
 
-/* ====== RESEÑAS (mockup visual) ====== */
+
 .reviews-card{
   background:var(--card);
   color:var(--fg);
@@ -61,7 +61,7 @@ header nav a:hover{ color:var(--accent); }
   letter-spacing:.5px;
 }
 
-/* Meta (promedio / cantidad) */
+
 .reviews-meta{
   display:flex;
   align-items:center;
@@ -74,7 +74,7 @@ header nav a:hover{ color:var(--accent); }
 .reviews-meta .of{ opacity:.85; }
 .reviews-meta .count{ margin-left:.25rem; }
 
-/* Estrellas DISPLAY: usa --value (0–5) */
+
 .stars{
   --value:0;
   position:relative;
@@ -92,14 +92,14 @@ header nav a:hover{ color:var(--accent); }
   color:var(--star);
 }
 
-/* Formulario (demo visual) */
+
 .review-form{ display:grid; gap:.75rem; margin-bottom:1rem; }
 .review-form .label{ font-size:.95rem; color:#ddd; }
 
-/* Radio + labels para selección de estrellas (no funcional) */
+
 .star-input{
   display:inline-flex;
-  flex-direction: row-reverse; /* hover pinta hacia la izquierda */
+  flex-direction: row-reverse; 
   gap:.2rem;
   font-size:1.6rem;
   user-select:none;
@@ -112,8 +112,7 @@ header nav a:hover{ color:var(--accent); }
 }
 .star-input label:hover,
 .star-input label:hover ~ label{ color:var(--star); }
-/* Si quieres “marcar” visualmente una elección en el mockup, puedes dejar uno chequeado por defecto
-   y este estilo hará que se vea pintado: */
+
 .star-input input:checked ~ label{ color:var(--star); }
 
 .review-text{
@@ -137,7 +136,7 @@ header nav a:hover{ color:var(--accent); }
 .btn-resena:hover{ filter:brightness(1.08); }
 .hint{ font-size:.85rem; color:var(--muted); }
 
-/* Lista de reseñas */
+
 .reviews-list{
   list-style:none;
   padding:0;
@@ -161,7 +160,7 @@ header nav a:hover{ color:var(--accent); }
 .review-head .date{ color:var(--muted); font-size:.9rem; }
 .review-body{ line-height:1.55; color:#eaeaea; }
 
-/* ====== Responsive ====== */
+
 @media (max-width: 960px){
   .detalle-producto{
     grid-template-columns: 1fr;

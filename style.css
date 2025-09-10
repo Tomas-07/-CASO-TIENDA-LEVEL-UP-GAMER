@@ -1,6 +1,4 @@
-/* ================================
-   RESET BÁSICO Y FUENTES
-   ================================ */
+
 * {
   margin: 0;
   padding: 0;
@@ -9,18 +7,16 @@
 
 body {
   font-family: 'Roboto', sans-serif;
-  background-color: #000;   /* Fondo negro gamer */
-  color: #fff;              /* Texto base blanco */
+  background-color: #000;  
+  color: #fff;              
   line-height: 1.6;
 }
 
 h1, h2, h3 {
-  font-family: 'Orbitron', sans-serif; /* Titulares gamer */
+  font-family: 'Orbitron', sans-serif; 
 }
 
-/* ================================
-   HEADER Y NAVEGACIÓN
-   ================================ */
+
 header {
   display: flex;
   justify-content: space-between;
@@ -30,7 +26,7 @@ header {
 }
 
 .logo h1 {
-  color: #1E90FF; /* Azul eléctrico */
+  color: #1E90FF; 
 }
 
 nav ul {
@@ -47,10 +43,10 @@ nav ul li a {
 }
 
 nav ul li a:hover {
-  color: #39FF14; /* Verde neón */
+  color: #39FF14; 
 }
 
-/* Carrito en el menú más llamativo */
+
 nav ul li:last-child a {
   background: #1E90FF;
   padding: 0.4rem 0.8rem;
@@ -62,9 +58,7 @@ nav ul li:last-child a:hover {
   color: #000;
 }
 
-/* ================================
-   SECCIONES GENERALES
-   ================================ */
+
 section {
   padding: 2rem;
   text-align: center;
@@ -75,9 +69,7 @@ section h2 {
   color: #39FF14;
 }
 
-/* ================================
-   CATÁLOGO Y PRODUCTOS
-   ================================ */
+
 .productos {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -120,7 +112,7 @@ section h2 {
   transition: 0.3s;
 }
 
-/* Botón de agregar al carrito */
+
 .btn-agregar {
   background: #1E90FF;
   color: #fff;
@@ -131,7 +123,7 @@ section h2 {
   color: #000;
 }
 
-/* Botón de ver detalles */
+
 .btn-detalle {
   background: transparent;
   color: #39FF14;
@@ -143,9 +135,7 @@ section h2 {
   color: #000;
 }
 
-/* ================================
-   TABLA DEL CARRITO
-   ================================ */
+
 .cart {
   width: 100%;
   border-collapse: collapse;
@@ -173,7 +163,7 @@ section h2 {
   margin-top: 1rem;
 }
 
-/* Botones generales */
+
 .btn {
   padding: 0.6rem 1.2rem;
   background: #1E90FF;
@@ -191,9 +181,7 @@ section h2 {
   color: #000;
 }
 
-/* ================================
-   FORMULARIOS LOGIN/REGISTRO
-   ================================ */
+
 .auth-box {
   max-width: 480px;
   margin: 2rem auto;
@@ -247,9 +235,7 @@ section h2 {
   text-align: center;
 }
 
-/* ================================
-   FOOTER
-   ================================ */
+
 .site-footer {
   background: #111;
   color: #d3d3d3;
@@ -269,16 +255,12 @@ section h2 {
   color: #39FF14;
 }
 
-/* ================================
-   EXTRA: Scroll suave entre secciones
-   ================================ */
+
 html {
   scroll-behavior: smooth;
 }
 
-/* ================================
-   CARRITO (lista + acciones)
-   ================================ */
+
 .carrito {
   max-width: 1000px;
   margin: 40px auto;
@@ -287,14 +269,14 @@ html {
 
 .carrito h2 {
   font-size: 2rem;
-  color: #39FF14; /* combina con tus títulos */
+  color: #39FF14; 
   margin-bottom: 25px;
   text-transform: uppercase;
   letter-spacing: 2px;
   text-align: center;
 }
 
-/* Lista de productos del carrito */
+
 .carrito-items {
   background: #111;
   border-radius: 12px;
@@ -330,7 +312,7 @@ html {
   text-shadow: 0 0 8px rgba(30,144,255,0.8);
 }
 
-/* Acciones del carrito */
+
 .acciones-carrito {
   margin-top: 30px;
   display: flex;
@@ -339,14 +321,14 @@ html {
   justify-content: center;
 }
 
-/* Botón reutilizando tu sistema (.btn base) */
+
 .btn-seguir,
 .btn-pagar {
-  /* heredan de .btn si también lo agregas en HTML */
+  
   border-radius: 8px;
 }
 
-/* Seguir comprando: estilo secundario */
+
 .btn-seguir {
   background: transparent;
   color: #39FF14;
@@ -357,7 +339,7 @@ html {
   color: #000;
 }
 
-/* Proceder al pago: usa tu paleta principal */
+
 .btn-pagar {
   background: #1E90FF;
   color: #fff;
@@ -368,7 +350,7 @@ html {
   color: #000;
 }
 
-/* Responsive */
+
 @media (max-width: 768px) {
   .carrito-item {
     flex-direction: column;

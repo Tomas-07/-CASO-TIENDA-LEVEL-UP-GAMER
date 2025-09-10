@@ -10,7 +10,7 @@
     --gradient-primary: linear-gradient(135deg, var(--electric-blue), var(--neon-green));
 }
 
-/* ===== RESET Y BASE ===== */
+
 * {
     margin: 0;
     padding: 0;
@@ -28,7 +28,7 @@ body {
     overflow: hidden;
 }
 
-/* ===== BACKGROUND ANIMADO ===== */
+
 .animated-bg {
     position: fixed;
     top: 0;
@@ -54,7 +54,7 @@ body {
     100% { transform: rotate(360deg); }
 }
 
-/* ===== CONTENEDOR PRINCIPAL LOGIN ===== */
+
 .login-container {
     background: linear-gradient(145deg, rgba(51, 51, 51, 0.9), rgba(0, 0, 0, 0.9));
     border: 2px solid var(--electric-blue);
@@ -79,7 +79,7 @@ body {
     }
 }
 
-/* ===== LOGO Y TÍTULO ===== */
+
 .login-logo {
     text-align: center;
     margin-bottom: 2rem;
@@ -118,7 +118,7 @@ body {
     margin-bottom: 2rem;
 }
 
-/* ===== FORMULARIO ===== */
+
 .login-form {
     width: 100%;
 }
@@ -176,7 +176,7 @@ body {
     color: var(--light-gray);
 }
 
-/* ===== CHECKBOX REMEMBER ME ===== */
+
 .remember-container {
     display: flex;
     align-items: center;
@@ -253,7 +253,7 @@ body {
     color: var(--neon-green);
 }
 
-/* ===== BOTÓN LOGIN ===== */
+
 .login-button {
     width: 100%;
     padding: 16px;
@@ -299,7 +299,7 @@ body {
     left: 100%;
 }
 
-/* ===== REGISTRO LINK ===== */
+
 .register-link {
     text-align: center;
     padding-top: 1.5rem;
@@ -322,7 +322,7 @@ body {
     color: var(--neon-green);
 }
 
-/* ===== MENSAJES DE ERROR/ÉXITO ===== */
+
 .message {
     padding: 12px;
     border-radius: 8px;
@@ -343,7 +343,7 @@ body {
     color: var(--neon-green);
 }
 
-/* ===== LOADING STATE ===== */
+
 .loading {
     display: none;
     width: 20px;
@@ -358,7 +358,7 @@ body {
     to { transform: rotate(360deg); }
 }
 
-/* ===== RESPONSIVE ===== */
+
 @media (max-width: 480px) {
     .login-container {
         padding: 2rem 1.5rem;
@@ -374,7 +374,7 @@ body {
     }
 }
 
-/* ===== EFECTOS ADICIONALES ===== */
+
 .pulse {
     animation: pulse 2s infinite;
 }
