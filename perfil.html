@@ -4,53 +4,209 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Mi Perfil - Level-Up Gamer</title>
-  <link rel="stylesheet" href="perfil.css">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Orbitron:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-   <header>
+  <header>
     <div class="logo">
       <h1>🎮 Level-Up Gamer</h1>
     </div>
     <nav>
       <ul>
-        <li><a href="#inicio">Inicio</a></li>
-        <li><a href="#catalogo">Catálogo</a></li>
-        <li><a href="#comunidad">Comunidad</a></li>
-        <li><a href="#contacto">Contacto</a></li>
-        <li><a href="carrito.html">🛒 Carrito</a></li>
+        <li><a href="index.html#inicio">Inicio</a></li>
+        <li><a href="index.html#catalogo">Catálogo</a></li>
+        <li><a href="index.html#comunidad">Comunidad</a></li>
+        <li><a href="index.html#contacto">Contacto</a></li>
+        <li><a href="carrito.html">🛒 Carrito (<span id="carrito-count">0</span>)</a></li>
       </ul>
     </nav>
   </header>
 
+  <main class="wrap">
+    <!-- INFORMACIÓN DE GAMIFICACIÓN -->
+    <section class="perfil" style="margin-bottom: 2rem;">
+      <h2>🏆 Tu Nivel y Puntos</h2>
+      
+      <div id="gamification-info" style="text-align: center; padding: 1.5rem; background: linear-gradient(135deg, #1E90FF, #39FF14); border-radius: 12px; margin-bottom: 2rem;">
+        <h3 style="font-size: 2rem; margin: 0; color: #000;" id="user-level">Cargando...</h3>
+        <p style="font-size: 1.5rem; margin: 0.5rem 0; color: #000; font-weight: bold;" id="user-points">0 Puntos LevelUp</p>
+        <p style="margin: 0; color: #000; font-weight: 600;" id="user-discount">Descuento actual: 0%</p>
+      </div>
 
-  <main class="perfil">
-    <h2>Mi Perfil</h2>
-    <form id="perfilForm">
-      <label for="nombre">Nombre</label>
-      <input type="text" id="nombre" name="nombre" placeholder="Ingresa tu nombre">
+      <div style="background: #1a1a1a; padding: 1.5rem; border-radius: 12px; margin-bottom: 2rem;">
+        <h3 style="color: #39FF14; margin-bottom: 1rem;">📊 Sistema de Niveles</h3>
+        <div style="display: grid; gap: 1rem;">
+          <div style="padding: 1rem; background: #111; border-radius: 8px; border-left: 4px solid #666;">
+            <strong style="color: #666;">Nivel 1: Novato</strong> - 0-99 puntos (0% descuento)
+          </div>
+          <div style="padding: 1rem; background: #111; border-radius: 8px; border-left: 4px solid #1E90FF;">
+            <strong style="color: #1E90FF;">Nivel 2: Jugador</strong> - 100-299 puntos (5% descuento)
+          </div>
+          <div style="padding: 1rem; background: #111; border-radius: 8px; border-left: 4px solid #39FF14;">
+            <strong style="color: #39FF14;">Nivel 3: Veterano</strong> - 300-599 puntos (10% descuento)
+          </div>
+          <div style="padding: 1rem; background: #111; border-radius: 8px; border-left: 4px solid #FFD54A;">
+            <strong style="color: #FFD54A;">Nivel 4: Experto</strong> - 600-999 puntos (15% descuento)
+          </div>
+          <div style="padding: 1rem; background: #111; border-radius: 8px; border-left: 4px solid #FF6B6B;">
+            <strong style="color: #FF6B6B;">Nivel 5: Leyenda</strong> - 1000+ puntos (20% descuento)
+          </div>
+        </div>
+      </div>
 
-      <label for="email">Correo electrónico</label>
-      <input type="email" id="email" name="email" placeholder="Ingresa tu correo">
+      <div style="background: #1a1a1a; padding: 1.5rem; border-radius: 12px; margin-bottom: 2rem;">
+        <h3 style="color: #1E90FF; margin-bottom: 1rem;">💰 Cómo Ganar Puntos</h3>
+        <ul style="color: #D3D3D3; line-height: 1.8;">
+          <li>🛒 <strong>Compras:</strong> 1 punto por cada $1.000 gastados</li>
+          <li>👥 <strong>Referencias:</strong> 100 puntos por cada amigo que registres con tu código</li>
+          <li>⭐ <strong>Reseñas:</strong> 25 puntos por cada reseña publicada</li>
+          <li>🎮 <strong>Eventos:</strong> Entre 150-300 puntos por asistir a eventos gamers</li>
+        </ul>
+      </div>
 
-      <label for="preferencias">Preferencias de compra</label>
-      <select id="preferencias" name="preferencias">
-        <option value="consolas">Consolas</option>
-        <option value="pc">Computadores Gamers</option>
-        <option value="accesorios">Accesorios</option>
-        <option value="sillas">Sillas Gamers</option>
-        <option value="ropa">Poleras/Polerones</option>
-      </select>
+      <div style="background: #1a1a1a; padding: 1.5rem; border-radius: 12px;">
+        <h3 style="color: #39FF14; margin-bottom: 1rem;">🔗 Tu Código de Referido</h3>
+        <div style="display: flex; align-items: center; gap: 1rem; flex-wrap: wrap;">
+          <input 
+            type="text" 
+            id="codigo-referido" 
+            readonly 
+            style="flex: 1; min-width: 150px; padding: 1rem; font-size: 1.2rem; font-weight: bold; text-align: center; background: #111; border: 2px solid #1E90FF; border-radius: 8px; color: #39FF14;"
+            value="Cargando..."
+          >
+          <button 
+            onclick="copiarCodigo()" 
+            style="padding: 1rem 1.5rem; background: #1E90FF; color: white; border: none; border-radius: 8px; font-weight: bold; cursor: pointer;">
+            📋 Copiar Código
+          </button>
+        </div>
+        <p style="margin-top: 1rem; color: #D3D3D3; font-size: 0.9rem;">
+          ¡Comparte tu código con amigos! Ganan 50 puntos al registrarse y tú ganas 100 puntos por cada referido.
+        </p>
+      </div>
+    </section>
 
-      <button type="submit">Guardar cambios</button>
-    </form>
+    <!-- FORMULARIO DE PERFIL -->
+    <section class="perfil">
+      <h2>📝 Editar Mi Perfil</h2>
+      <form id="perfilForm">
+        <label for="nombre">Nombre completo</label>
+        <input type="text" id="nombre" name="nombre" placeholder="Ingresa tu nombre" required>
 
-    <div id="mensaje" class="mensaje"></div>
+        <label for="email">Correo electrónico</label>
+        <input type="email" id="email" name="email" placeholder="Ingresa tu correo" required>
+
+        <label for="preferencias">Preferencias de compra</label>
+        <select id="preferencias" name="preferencias">
+          <option value="consolas">Consolas</option>
+          <option value="pc">Computadores Gamers</option>
+          <option value="accesorios">Accesorios</option>
+          <option value="sillas">Sillas Gamers</option>
+          <option value="ropa">Poleras/Polerones</option>
+          <option value="juegos-mesa">Juegos de Mesa</option>
+        </select>
+
+        <button type="submit">Guardar cambios</button>
+      </form>
+
+      <div id="mensaje" class="mensaje" style="display: none;"></div>
+
+      <div style="margin-top: 2rem; padding-top: 2rem; border-top: 1px solid #222;">
+        <button 
+          onclick="cerrarSesion()" 
+          style="width: 100%; padding: 1rem; background: #ff6b6b; color: white; border: none; border-radius: 8px; font-weight: bold; cursor: pointer;">
+          🚪 Cerrar Sesión
+        </button>
+      </div>
+    </section>
   </main>
 
-  <footer>
-    <p>&copy; 2025 Level-Up Gamer. Todos los derechos reservados.</p>
+  <footer class="site-footer">
+    <div class="footer-content">
+      <p>&copy; 2025 Level-Up Gamer. Todos los derechos reservados.</p>
+    </div>
   </footer>
 
-  <script src="perfil.js"></script>
+  <script src="validation.js"></script>
+  <script>
+    // Cargar datos del usuario
+    window.addEventListener('DOMContentLoaded', function() {
+      // Verificar autenticación
+      const isLoggedIn = sessionStorage.getItem('isLoggedIn') === 'true';
+      if (!isLoggedIn) {
+        mostrarMensaje('Debes iniciar sesión para acceder a tu perfil', 'error');
+        setTimeout(() => {
+          window.location.href = 'Login.html';
+        }, 2000);
+        return;
+      }
+
+      const userData = JSON.parse(sessionStorage.getItem('userData') || '{}');
+      
+      // Cargar información de gamificación
+      const points = userData.levelUpPoints || 0;
+      const level = gamification.getUserLevel(points);
+      
+      document.getElementById('user-level').textContent = `${level.name} (Nivel ${level.level})`;
+      document.getElementById('user-points').textContent = `${points} Puntos LevelUp`;
+      
+      let totalDiscount = level.discount;
+      if (userData.descuentoDuoc) {
+        totalDiscount += userData.descuentoDuoc;
+      }
+      document.getElementById('user-discount').textContent = `Descuento total: ${totalDiscount}%`;
+      
+      // Mostrar código de referido
+      document.getElementById('codigo-referido').value = userData.codigoReferido || 'N/A';
+      
+      // Cargar datos del formulario
+      document.getElementById('nombre').value = userData.nombre || '';
+      document.getElementById('email').value = userData.email || '';
+      document.getElementById('preferencias').value = userData.preferencias || 'consolas';
+    });
+
+    // Guardar cambios del perfil
+    document.getElementById('perfilForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      const userData = JSON.parse(sessionStorage.getItem('userData') || '{}');
+      userData.nombre = document.getElementById('nombre').value;
+      userData.email = document.getElementById('email').value;
+      userData.preferencias = document.getElementById('preferencias').value;
+      
+      sessionStorage.setItem('userData', JSON.stringify(userData));
+      
+      const mensaje = document.getElementById('mensaje');
+      mensaje.textContent = '✅ Perfil actualizado correctamente';
+      mensaje.style.color = '#39FF14';
+      mensaje.style.display = 'block';
+      
+      setTimeout(() => {
+        mensaje.style.display = 'none';
+      }, 3000);
+    });
+
+    // Copiar código de referido
+    function copiarCodigo() {
+      const input = document.getElementById('codigo-referido');
+      input.select();
+      document.execCommand('copy');
+      
+      mostrarMensaje('¡Código copiado al portapapeles!', 'success');
+    }
+
+    // Cerrar sesión
+    function cerrarSesion() {
+      if (confirm('¿Estás seguro que deseas cerrar sesión?')) {
+        sessionStorage.removeItem('isLoggedIn');
+        sessionStorage.removeItem('userData');
+        mostrarMensaje('Sesión cerrada exitosamente', 'success');
+        setTimeout(() => {
+          window.location.href = 'index.html';
+        }, 1500);
+      }
+    }
+  </script>
 </body>
 </html>

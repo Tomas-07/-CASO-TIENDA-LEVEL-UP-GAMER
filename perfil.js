@@ -27,3 +27,5 @@ form.addEventListener("submit", (e) => {
   mensaje.textContent = "✅ Perfil actualizado correctamente";
   mensaje.style.color = "#39FF14";
 });
+
+

@@ -1,18 +1,13 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Carrito | Level-Up Gamer</title>
-
-  
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Orbitron:wght@500;700&display=swap" rel="stylesheet">
-
- 
-  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Orbitron:wght@500;700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="style.css"/>
 </head>
 <body>
- 
   <header>
     <div class="logo">
       <h1>🎮 Level-Up Gamer</h1>
@@ -28,58 +23,283 @@
     </nav>
   </header>
 
- 
   <main class="wrap">
     <h2>🛒 Tu Carrito de Compras</h2>
 
-    <table class="cart">
-      <thead>
-        <tr>
-          <th>Producto</th>
-          <th>Precio</th>
-          <th>Cantidad</th>
-          <th>Total línea</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>Auriculares HyperX Cloud II</td>
-          <td>$79.990</td>
-          <td><input type="number" value="1" min="1"></td>
-          <td>$79.990</td>
-        </tr>
-        <tr>
-          <td>Consola PlayStation 5</td>
-          <td>$549.990</td>
-          <td><input type="number" value="1" min="1"></td>
-          <td>$549.990</td>
-        </tr>
-      </tbody>
-      <tfoot>
-        <tr>
-          <td colspan="3" style="text-align:right"><strong>Total</strong></td>
-          <td><strong>$629.980</strong></td>
-        </tr>
-      </tfoot>
-    </table>
+    <!-- Información de descuentos activos -->
+    <div id="descuentos-info" style="background: linear-gradient(135deg, #1E90FF, #39FF14); padding: 1.5rem; border-radius: 12px; margin-bottom: 2rem; color: #000; display: none;">
+      <h3 style="margin: 0 0 0.5rem; font-size: 1.2rem;">🎉 ¡Descuentos Activos!</h3>
+      <div id="descuentos-lista"></div>
+    </div>
+
+    <!-- Tabla del carrito -->
+    <div id="carrito-container">
+      <table class="cart" id="tabla-carrito">
+        <thead>
+          <tr>
+            <th>Producto</th>
+            <th>Precio Unitario</th>
+            <th>Cantidad</th>
+            <th>Total línea</th>
+            <th>Acciones</th>
+          </tr>
+        </thead>
+        <tbody id="carrito-body">
+          <!-- Se llenará dinámicamente -->
+        </tbody>
+        <tfoot>
+          <tr>
+            <td colspan="3" style="text-align:right"><strong>Subtotal</strong></td>
+            <td><strong id="subtotal">$0</strong></td>
+            <td></td>
+          </tr>
+          <tr id="fila-descuento-duoc" style="display: none;">
+            <td colspan="3" style="text-align:right; color: #39FF14;">Descuento DUOC (20%)</td>
+            <td style="color: #39FF14;" id="descuento-duoc">-$0</td>
+            <td></td>
+          </tr>
+          <tr id="fila-descuento-nivel" style="display: none;">
+            <td colspan="3" style="text-align:right; color: #1E90FF;">Descuento por Nivel</td>
+            <td style="color: #1E90FF;" id="descuento-nivel">-$0</td>
+            <td></td>
+          </tr>
+          <tr style="border-top: 2px solid #39FF14;">
+            <td colspan="3" style="text-align:right; font-size: 1.2rem;"><strong>TOTAL A PAGAR</strong></td>
+            <td style="font-size: 1.3rem;"><strong id="total-final">$0</strong></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td colspan="5" style="text-align:right; color: #39FF14; font-size: 0.9rem;">
+              <span id="puntos-ganados"></span>
+            </td>
+          </tr>
+        </tfoot>
+      </table>
+
+      <!-- Mensaje carrito vacío -->
+      <div id="carrito-vacio" style="display: none; text-align: center; padding: 3rem; background: #111; border-radius: 12px; margin: 2rem 0;">
+        <p style="font-size: 1.2rem; color: #D3D3D3; margin-bottom: 1.5rem;">🛒 Tu carrito está vacío</p>
+        <a href="index.html#catalogo" class="btn">Explorar productos</a>
+      </div>
+    </div>
 
     <div class="acciones-carrito">
-    <a href="index.html#catalogo" class="btn-seguir">⬅ Seguir comprando</a>
-    <button class="btn-pagar">Proceder al pago</button>
+      <a href="index.html#catalogo" class="btn-seguir">⬅️ Seguir comprando</a>
+      <button class="btn-pagar" id="btn-proceder-pago" type="button">Proceder al pago</button>
     </div>
   </main>
 
-
   <footer class="site-footer">
     <div class="footer-content">
-      <p>© 2025 Level-Up Gamer — Despachos a todo Chile</p>
+      <p>&copy; 2025 Level-Up Gamer – Despachos a todo Chile</p>
       <nav class="footer-nav">
         <a href="index.html">Inicio</a> ·
-        <a href="catalogo.html">Catálogo</a> ·
-        <a href="eventos.html">Eventos</a> ·
-        <a href="soporte.html">Soporte</a>
+        <a href="index.html#catalogo">Catálogo</a> ·
+        <a href="index.html#eventos">Eventos</a> ·
+        <a href="index.html#contacto">Soporte</a>
       </nav>
     </div>
   </footer>
+
+  <script src="validation.js"></script>
+  <script>
+    // === Utilidades ===
+    function formatearPrecio(precio) {
+      const n = Number(precio) || 0;
+      return `$${n.toLocaleString('es-CL')}`;
+    }
+
+    // Centralizamos el cálculo para no duplicar lógica
+    function computeTotals() {
+      const subtotal = Number(carrito.calcularTotal()) || 0;
+      const userData = JSON.parse(sessionStorage.getItem('userData') || '{}');
+      const points = Number(userData.levelUpPoints || 0);
+      const level = (typeof gamification !== 'undefined' && gamification && typeof gamification.getUserLevel === 'function')
+        ? gamification.getUserLevel(points)
+        : { name: 'Nivel 0', discount: 0 };
+
+      let descuentoDuoc = 0;
+      if (userData.descuentoDuoc) {
+        descuentoDuoc = subtotal * (Number(userData.descuentoDuoc) / 100);
+      }
+
+      let descuentoNivel = 0;
+      if (level.discount > 0) {
+        descuentoNivel = subtotal * (Number(level.discount) / 100);
+      }
+
+      const totalDescuento = descuentoDuoc + descuentoNivel;
+      const totalFinal = Math.max(0, subtotal - totalDescuento);
+      const puntosGanados = Math.floor(totalFinal / 1000);
+
+      return { subtotal, descuentoDuoc, descuentoNivel, totalDescuento, totalFinal, puntosGanados, level };
+    }
+
+    // === Render de la tabla ===
+    function renderizarCarrito() {
+      const carritoBody = document.getElementById('carrito-body');
+      const carritoVacio = document.getElementById('carrito-vacio');
+      const tablaCarrito = document.getElementById('tabla-carrito');
+
+      if (typeof carrito?.init === 'function') {
+        carrito.init();
+      }
+
+      if (!carrito.items || carrito.items.length === 0) {
+        tablaCarrito.style.display = 'none';
+        carritoVacio.style.display = 'block';
+        document.querySelector('.acciones-carrito').style.display = 'none';
+        return;
+      }
+
+      tablaCarrito.style.display = 'table';
+      carritoVacio.style.display = 'none';
+      document.querySelector('.acciones-carrito').style.display = 'flex';
+
+      // Limpiar tabla
+      carritoBody.innerHTML = '';
+
+      // Agregar productos
+      carrito.items.forEach(item => {
+        const fila = document.createElement('tr');
+        const totalLinea = Number(item.precio) * Number(item.cantidad);
+        fila.innerHTML = `
+          <td>${item.nombre}</td>
+          <td>${formatearPrecio(item.precio)}</td>
+          <td>
+            <input 
+              type="number" 
+              value="${item.cantidad}" 
+              min="1" 
+              max="99"
+              data-codigo="${item.codigo}"
+              onchange="actualizarCantidad('${item.codigo}', this.value)"
+              style="width: 70px; padding: 0.5rem; text-align: center; background: #1a1a1a; color: #fff; border: 1px solid #222; border-radius: 6px;"
+              aria-label="Cambiar cantidad para ${item.nombre}"
+            >
+          </td>
+          <td>${formatearPrecio(totalLinea)}</td>
+          <td>
+            <button 
+              onclick="eliminarItem('${item.codigo}')"
+              style="background: #ff6b6b; color: white; border: none; padding: 0.5rem 1rem; border-radius: 6px; cursor: pointer; font-weight: bold;"
+              type="button"
+            >
+              Eliminar
+            </button>
+          </td>
+        `;
+        carritoBody.appendChild(fila);
+      });
+
+      // Calcular totales y volcarlos al DOM
+      calcularTotales();
+    }
+
+    function calcularTotales() {
+      const { subtotal, descuentoDuoc, descuentoNivel, totalDescuento, totalFinal, puntosGanados, level } = computeTotals();
+
+      // Subtotal / total
+      document.getElementById('subtotal').textContent = formatearPrecio(subtotal);
+      document.getElementById('total-final').textContent = formatearPrecio(totalFinal);
+
+      // Descuento DUOC
+      if (descuentoDuoc > 0) {
+        document.getElementById('fila-descuento-duoc').style.display = 'table-row';
+        document.getElementById('descuento-duoc').textContent = '-' + formatearPrecio(descuentoDuoc);
+      } else {
+        document.getElementById('fila-descuento-duoc').style.display = 'none';
+      }
+
+      // Descuento por nivel
+      if (descuentoNivel > 0) {
+        document.getElementById('fila-descuento-nivel').style.display = 'table-row';
+        document.getElementById('descuento-nivel').textContent = '-' + formatearPrecio(descuentoNivel) + ` (${level.name} ${level.discount}%)`;
+      } else {
+        document.getElementById('fila-descuento-nivel').style.display = 'none';
+      }
+
+      // Puntos
+      document.getElementById('puntos-ganados').textContent = `Ganarás ${puntosGanados} puntos LevelUp con esta compra`;
+
+      // Banner de descuentos
+      const descuentosInfo = document.getElementById('descuentos-info');
+      if (totalDescuento > 0) {
+        const mensajes = [];
+        if (descuentoDuoc > 0) mensajes.push(`Descuento DUOC: ${formatearPrecio(descuentoDuoc)}`);
+        if (descuentoNivel > 0) mensajes.push(`Descuento ${level.name}: ${formatearPrecio(descuentoNivel)}`);
+        mensajes.push(`Total ahorrado: ${formatearPrecio(totalDescuento)}`);
+        document.getElementById('descuentos-lista').innerHTML = mensajes.map(m => `<p style="margin: 0.3rem 0; font-weight: 600;">${m}</p>`).join('');
+        descuentosInfo.style.display = 'block';
+      } else {
+        descuentosInfo.style.display = 'none';
+      }
+    }
+
+    // === Acciones ===
+    function actualizarCantidad(codigo, cantidad) {
+      const qty = Math.max(1, Math.min(99, parseInt(cantidad, 10) || 1));
+      if (typeof carrito?.modificarCantidad === 'function') {
+        carrito.modificarCantidad(codigo, qty);
+      }
+      renderizarCarrito();
+    }
+
+    function eliminarItem(codigo) {
+      if (confirm('¿Deseas eliminar este producto del carrito?')) {
+        if (typeof carrito?.eliminar === 'function') {
+          carrito.eliminar(codigo);
+        }
+        renderizarCarrito();
+        if (typeof mostrarMensaje === 'function') {
+          mostrarMensaje('Producto eliminado del carrito', 'success');
+        }
+      }
+    }
+
+    // Proceder al pago
+    function handlePagarClick() {
+      const isLoggedIn = sessionStorage.getItem('isLoggedIn') === 'true';
+
+      if (!isLoggedIn) {
+        if (typeof mostrarMensaje === 'function') {
+          mostrarMensaje('Debes iniciar sesión para realizar la compra', 'error');
+        }
+        setTimeout(() => { window.location.href = 'Login.html'; }, 2000);
+        return;
+      }
+
+      if (!carrito.items || carrito.items.length === 0) {
+        if (typeof mostrarMensaje === 'function') {
+          mostrarMensaje('Tu carrito está vacío', 'error');
+        }
+        return;
+      }
+
+      const { totalFinal, puntosGanados } = computeTotals();
+
+      // Acreditar puntos
+      if (typeof gamification?.addPoints === 'function') {
+        gamification.addPoints('currentUser', puntosGanados);
+      }
+
+      if (typeof mostrarMensaje === 'function') {
+        mostrarMensaje(`¡Compra exitosa! Has ganado ${puntosGanados} puntos LevelUp`, 'success');
+      }
+
+      if (typeof carrito?.vaciar === 'function') {
+        carrito.vaciar();
+      }
+
+      setTimeout(() => { window.location.href = 'perfil.html'; }, 3000);
+    }
+
+    // Inicializar al cargar
+    window.addEventListener('DOMContentLoaded', () => {
+      renderizarCarrito();
+      const btn = document.getElementById('btn-proceder-pago');
+      btn?.addEventListener('click', handlePagarClick);
+    });
+  </script>
 </body>
 </html>
